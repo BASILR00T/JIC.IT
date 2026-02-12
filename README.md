@@ -1,4 +1,4 @@
-# KawnHub-V0.1 | JIC
+# JIC IT Hub - V5.0 | JIC
 ## About This Project
 
 This site is an electronic reference for students of the "COIT" course at Jubail Industrial College (JIC).

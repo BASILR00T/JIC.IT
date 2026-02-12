@@ -8,58 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
-    <div
-        style="background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%); color: white; padding: 12px; text-align: center; font-family: 'Cairo', sans-serif; border-bottom: 1px solid rgba(255,255,255,0.1);">
-        <p style="margin: 0; font-size: 15px; color: white; direction: rtl;">
-            🎓 <strong>ركز في اختبارك الآن.. والمستقبل علينا!</strong> &nbsp;|&nbsp;
-            <a href="https://kawnhub.com/" target="_blank"
-                style="color: white; text-decoration: underline; font-weight: bold;">نجهز لكم منصة جديدة كلياً للفصل
-                القادم (V2)</a> .. بالتوفيق !
-        </p>
-    </div>
+
     <div class="container">
-        <header class="main-header">
-            <h1>Courses Practical Hub</h1>
-            <p>Your ultimate reference for JIC practical courses. CLI commands, configurations, and troubleshooting
-                guides at your fingertips.</p>
-            <div class="search-wrapper">
-                <input type="search" id="search-input" placeholder="Search topics, commands, or modules..."
-                    autocomplete="off">
+        <section class="hero" style="position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%); z-index: -1;">
             </div>
-        </header>
 
-        <div id="results-container"></div>
+            <div
+                style="margin-bottom: 2rem; border: 1px solid rgba(59,130,246,0.3); background: rgba(59,130,246,0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; color: #60a5fa; text-transform: uppercase;">
+                Based on JIC Curriculum</div>
 
-        <main class="modules-grid" id="main-content">
-            <a href="PCCT/PCCT.html" class="module-card">
-                <h2>PC Config & Troubleshooting</h2>
-                <p>Master Windows CLI, system diagnostics, disk management, and user administration.</p>
-            </a>
-            <a href="NOSs/NOS.html" class="module-card">
-                <h2>Network Operating Systems</h2>
-                <p>Server administration, Active Directory, Domain Controllers, and File Services.</p>
-            </a>
-            <a href="Network2/Network2.html" class="module-card">
-                <h2>Network 2</h2>
-                <p>Advanced Cisco IOS, VLANs, OSPF, EIGRP, and enterprise routing protocols.</p>
-            </a>
-            <a href="Programming/Programming.html" class="module-card">
-                <h2>Programming</h2>
-                <p>Comprehensive guides for Python, scripting, and software development concepts.</p>
-            </a>
-            <div class="module-card disabled">
-                <h2>Network 1</h2>
-                <p>Fundamental networking concepts. Coming Soon.</p>
+            <h1 style="font-size: 5rem; letter-spacing: -2px; line-height: 1.1; margin-bottom: 2rem;">
+                <span
+                    style="display: block; font-size: 2rem; font-weight: 400; letter-spacing: 0; color: var(--text-secondary); margin-bottom: 0.5rem;">The
+                    Ultimate</span>
+                Courses <span
+                    style="background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Practical
+                    Hub</span>
+            </h1>
+
+            <p style="font-size: 1.25rem; max-width: 600px; color: #94a3b8; line-height: 1.8;">
+                Master the CLI. Conquer configurations. A streamlined reference engine built exclusively for Jubail
+                Industrial College students.
+            </p>
+
+            <div class="cta-group" style="margin-top: 3rem;">
+                <a href="hub.html" class="btn-primary"
+                    style="padding: 1rem 3rem; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 0 40px rgba(59,130,246,0.3);">Launch
+                    Library</a>
             </div>
-            <a href="Intro_to_web_design/Web_Design_Hub.html" class="module-card">
-                <h2>Intro to Web Design</h2>
-                <p>HTML, CSS, and Web basics.</p>
-            </a>
-        </main>
+
+            <div style="margin-top: 4rem; display: flex; gap: 3rem; opacity: 0.6;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: white;">V5.0</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Engine</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: white;">100%</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">JIC Sync</div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer class="main-footer">
@@ -69,7 +63,8 @@
                     target="_blank">BASILR00T</a>.</p>
         </div>
     </footer>
-    <script src="search.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

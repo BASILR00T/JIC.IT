@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson | Courses Practical Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase & Markdown Parser -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .lesson-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .lesson-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .lesson-content h2 {
+            margin-top: 3rem;
+            color: var(--primary-brand);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .lesson-content h3 {
+            margin-top: 2rem;
+            color: white;
+        }
+
+        .lesson-content pre {
+            background: #0f172a;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 1.5rem 0;
+        }
+
+        .lesson-content code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .lesson-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #f8fafc;
+        }
+
+        /* --- CMD & Terminal Styling (The Hub Classic) --- */
+        .comment {
+            color: #6b7280;
+            font-style: italic;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .output {
+            color: #f8fafc;
+            opacity: 0.7;
+        }
+
+        .user-input {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* --- Tables Styling --- */
+        .lesson-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-content th {
+            background: rgba(59, 130, 246, 0.1);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lesson-content td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .lesson-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.05);
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .info-box {
+            background: rgba(59, 130, 246, 0.05);
+            border-right: 4px solid var(--primary-brand);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 3rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-brand);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lesson-container">
+        <nav class="breadcrumb"
+            style="background: rgba(255,255,255,0.03); padding: 0.75rem 1.5rem; border-radius: 50px; border: 1px solid var(--border-color); display: inline-flex; align-items: center; backdrop-filter: blur(5px);">
+            <a href="hub.html" style="font-weight: 600;">Library</a>
+            <span style="margin: 0 0.5rem; opacity: 0.5;">&rsaquo;</span>
+            <span id="module-title" style="color: var(--text-secondary);">Course</span>
+            <span style="margin: 0 0.5rem; opacity: 0.5;">&rsaquo;</span>
+            <span id="lesson-page-title" style="color: var(--primary-brand); font-weight: 600;">Lesson</span>
+        </nav>
+
+        <article id="lesson-workspace">
+            <header class="main-header" style="text-align: left; padding: 0; margin-bottom: 3rem;">
+                <h1 id="lesson-title">Loading Lesson...</h1>
+                <p id="lesson-meta" style="color: var(--text-secondary);"></p>
+            </header>
+
+            <div id="video-section"></div>
+
+            <div id="lesson-content" class="lesson-content">
+                <!-- Content injected here -->
+            </div>
+        </article>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>JIC Practical Hub Dynamic Page. Content managed via Supabase.</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            if (!slug) {
+                window.location.href = 'hub.html';
+                return;
+            }
+
+            await loadLesson(slug);
+        });
+
+        async function loadLesson(slug) {
+            try {
+                // Fetch lesson joined with module info
+                const { data, error } = await supabaseClient
+                    .from('lessons')
+                    .select('*, modules(title)')
+                    .eq('slug', slug)
+                    .single();
+
+                if (error || !data) throw new Error('Lesson not found');
+
+                // Update UI
+                document.title = `${data.title} | JIC Hub`;
+                document.getElementById('lesson-title').innerText = data.title;
+                document.getElementById('module-title').innerText = data.modules.title;
+                document.getElementById('lesson-page-title').innerText = data.title;
+
+                if (data.last_updated) {
+                    const date = new Date(data.last_updated).toLocaleDateString();
+                    document.getElementById('lesson-meta').innerText = `Last updated on ${date}`;
+                }
+
+                // Video rendering
+                if (data.video_url) {
+                    const embedUrl = data.video_url.replace('watch?v=', 'embed/');
+                    document.getElementById('video-section').innerHTML = `
+                        <div class="video-wrapper">
+                            <iframe src="${embedUrl}" allowfullscreen></iframe>
+                        </div>
+                    `;
+                }
+
+                // Markdown rendering
+                // Configure marked to NOT escape inline HTML so our CMD styles work
+                marked.setOptions({
+                    headerIds: false,
+                    mangle: false
+                });
+                document.getElementById('lesson-content').innerHTML = marked.parse(data.content_md || '');
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('lesson-workspace').innerHTML = `
+                    <div style="text-align: center; padding: 5rem 0;">
+                        <h2>Oops! Content Not Found</h2>
+                        <p>The lesson you are looking for doesn't exist or hasn't been migrated yet.</p>
+                        <a href="hub.html" class="btn-primary" style="margin-top: 2rem; display: inline-block;">Return to Library</a>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

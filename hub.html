@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Hub | Courses Practical Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header"
+            style="text-align: center; padding: 4rem 0 3rem; background: radial-gradient(circle at center, rgba(59,130,246,0.1) 0%, transparent 70%);">
+            <h1 style="font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 1rem;">
+                Explore <span
+                    style="background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Knowledge</span>
+            </h1>
+            <p style="font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem;">
+                Select a block to access practical guides, troubleshooting docs, and CLI references.
+            </p>
+            <div class="search-wrapper">
+                <input type="search" id="search-input" placeholder="Search topics, commands, or modules..."
+                    autocomplete="off"
+                    style="background: rgba(15,23,42,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(59,130,246,0.3); padding: 1.2rem; font-size: 1rem; border-radius: 12px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Content loaded via app.js -->
+            <div class="loading-state" style="text-align: center; padding: 4rem;">
+                <p>Loading modules...</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Found an issue? Contact <a href="mailto:BSA717@outlook.sa">BSA717@outlook.sa</a></p>
+            <p>Built for JIC Students.</p>
+        </div>
+    </footer>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

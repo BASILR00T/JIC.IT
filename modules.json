@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pcct",
+    "title": "PC Config & Troubleshooting",
+    "description": "Master Windows CLI, system diagnostics, disk management, and user administration.",
+    "link": "PCCT/PCCT.html",
+    "block": 3,
+    "icon": "🛠️",
+    "disabled": false,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  },
+  {
+    "id": "noss",
+    "title": "Network Operating Systems",
+    "description": "Server administration, Active Directory, Domain Controllers, and File Services.",
+    "link": "NOSs/NOS.html",
+    "block": 3,
+    "icon": "🖥️",
+    "disabled": false,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  },
+  {
+    "id": "network2",
+    "title": "Network 2",
+    "description": "Advanced Cisco IOS, VLANs, OSPF, EIGRP, and enterprise routing protocols.",
+    "link": "Network2/Network2.html",
+    "block": 3,
+    "icon": "🌐",
+    "disabled": false,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  },
+  {
+    "id": "programming",
+    "title": "Programming",
+    "description": "Comprehensive guides for Python, scripting, and software development concepts.",
+    "link": "Programming/Programming.html",
+    "block": 2,
+    "icon": "🐍",
+    "disabled": false,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  },
+  {
+    "id": "network1",
+    "title": "Network 1",
+    "description": "Fundamental networking concepts. Coming Soon.",
+    "link": "#",
+    "block": 2,
+    "icon": "📡",
+    "disabled": true,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  },
+  {
+    "id": "web-design",
+    "title": "Intro to Web Design",
+    "description": "HTML, CSS, and Web basics.",
+    "link": "Intro_to_web_design/Web_Design_Hub.html",
+    "block": 2,
+    "icon": "🎨",
+    "disabled": false,
+    "last_updated": "2026-02-04T19:00:00.000Z"
+  }
+]
